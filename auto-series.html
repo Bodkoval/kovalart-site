@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="description" content="Katia Koval - Contemporary Art. Professional paintings, yacht series, auto series. Available for purchase.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Auto Series | Katia Koval</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Mono:wght@300;400&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Mono', monospace; background-color: #ffffff; color: #000000; padding: 0 60px; }
+        .line { width: 100%; height: 1px; background-color: #000000; margin: 0; }
+        header { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 30px 0; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* Стилі для лого */
+        .logo-img { width: 120px; height: auto; display: block; cursor: pointer; }
+        
+        /* Головний контейнер навігації */
+        header nav { display: flex; align-items: center; justify-self: center; position: relative; }
+        header nav a { text-decoration: none; color: #000000; margin: 0 20px; letter-spacing: 2px; }
+        
+        .dropdown { display: inline-block; cursor: pointer; }
+        
+        /* Випадаюче меню з безшовним мостом для курсора */
+        .dropdown-content { 
+            display: none; 
+            position: absolute; 
+            top: 100%; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            padding-top: 25px; 
+            z-index: 10; 
+        }
+        
+        /* Внутрішній блок обгортки з рамкою */
+        .dropdown-inner {
+            background: #fff; 
+            border: 1px solid #000; 
+            padding: 15px 35px; 
+            white-space: nowrap;
+        }
+        
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-inner a { margin: 0 15px; color: #000; text-decoration: none; display: inline-block; }
+        
+        .header-empty { justify-self: end; font-size: 11px; letter-spacing: 1px; cursor: pointer; }
+        
+        /* Стилі для контейнера галереї */
+        .gallery-container { max-width: 1000px; margin: 0 auto; padding: 60px 0; }
+        .gallery-item { display: flex; gap: 40px; padding: 60px 0; align-items: flex-start; }
+        .image-wrapper { width: 40%; flex-shrink: 0; cursor: zoom-in; }
+        .image-wrapper img { width: 100%; height: auto; display: block; }
+        .item-info { width: 60%; }
+        .item-title { font-size: 24px; font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+
+        /* Оновлений Lightbox з кнопками гортання */
+        .lightbox-overlay { 
+            display: none; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0,0,0,0.95); 
+            z-index: 1000; 
+            justify-content: center; 
+            align-items: center; 
+        }
+        .lightbox-overlay.active { display: flex; }
+        .lightbox-image { max-width: 85%; max-height: 85vh; object-fit: contain; user-select: none; }
+        .lightbox-close { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; cursor: pointer; transition: opacity 0.2s; }
+        .lightbox-close:hover { opacity: 0.7; }
+        
+        /* Стрілки навігації */
+        .lightbox-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ffffff;
+            font-size: 45px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 20px;
+            z-index: 1010;
+            transition: opacity 0.2s, transform 0.2s;
+            user-select: none;
+        }
+        .lightbox-arrow:hover { opacity: 0.7; }
+        .lightbox-arrow-left { left: 20px; }
+        .lightbox-arrow-right { right: 20px; }
+
+        /* Підвал з відносним позиціонуванням */
+        footer { padding: 60px 0; display: flex; justify-content: space-between; align-items: center; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; position: relative; }
+        
+        /* Блок копірайту та умов зліва */
+        .footer-left { display: flex; flex-direction: column; gap: 8px; }
+        .footer-left a { color: #000000; text-decoration: none; }
+        .footer-left a:hover { text-decoration: underline; }
+
+        /* Платіжні іконки зафіксовані строго по центру підвалу */
+        .payment-icons { display: flex; gap: 20px; align-items: center; color: #000000; font-size: 22px; position: absolute; left: 50%; transform: translateX(-50%); }
+        
+        /* Соцмережі чітко справа */
+        .social-icons { display: flex; gap: 25px; align-items: center; }
+        .social-icons a { color: #000000; text-decoration: none; font-size: 22px; display: inline-block; transition: opacity 0.2s ease; }
+        .social-icons a:hover { opacity: 0.6; }
+
+        /* Мобільна адаптивність (для екранів менше 768px) */
+        @media (max-width: 768px) {
+            body { 
+                padding: 0 20px; 
+            }
+            header { 
+                display: flex; 
+                flex-direction: column; 
+                gap: 15px; 
+                padding: 20px 0; 
+            }
+            header nav { 
+                flex-wrap: wrap; 
+                justify-content: center; 
+            }
+            header nav a { 
+                margin: 5px 10px; 
+            }
+            .header-empty { 
+                justify-self: center; 
+            }
+            .gallery-container {
+                padding: 30px 0;
+            }
+            .gallery-item {
+                flex-direction: column;
+                gap: 20px;
+                padding: 40px 0;
+                align-items: center;
+            }
+            .image-wrapper {
+                width: 100%;
+            }
+            .item-info {
+                width: 100%;
+                text-align: center;
+            }
+            .item-title {
+                font-size: 22px;
+            }
+            footer { 
+                flex-direction: column; 
+                gap: 25px; 
+                text-align: center; 
+                padding: 40px 0; 
+            }
+            .footer-left {
+                align-items: center;
+            }
+            .payment-icons { 
+                position: static; 
+                transform: none; 
+                justify-content: center; 
+                flex-wrap: wrap; 
+            }
+            .social-icons { 
+                justify-content: center; 
+            }
+            /* Адаптація стрілок під пальці на мобілках */
+            .lightbox-arrow { font-size: 35px; padding: 10px; }
+            .lightbox-arrow-left { left: 5px; }
+            .lightbox-arrow-right { right: 5px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="line"></div>
+    <header>
+        <a href="index.html">
+            <img src="лого.jpg" alt="KovalArt Logo" class="logo-img">
+        </a>
+        <nav>
+            <a href="index.html" data-i18n="home">Home</a>
+            <a href="about.html" data-i18n="about">About</a>
+            <a href="available.html" data-i18n="available">Available</a>
+            <div class="dropdown">
+                <span data-i18n="gallery">Gallery <i class="fa-solid fa-chevron-down"></i></span>
+                <div class="dropdown-content">
+                    <div class="dropdown-inner">
+                        <a href="auto-series.html" data-i18n="auto" style="font-weight: bold;">Auto Series</a>
+                        <a href="yacht-series.html" data-i18n="yacht">Yacht Series</a>
+                    </div>
+                </div>
+            </div>
+            <a href="contact.html" data-i18n="contact">Contact</a>
+        </nav>
+        <div class="header-empty">
+            <span onclick="setLanguage('ua')">UA</span> / <span onclick="setLanguage('en')">EN</span>
+        </div>
+    </header>
+    <div class="line"></div>
+    
+    <main class="gallery-container">
+        <article class="gallery-item">
+            <div class="image-wrapper" data-images="car1.jpg,car1_деталь1.jpg,car1_інтерєр.jpg">
+                <img src="car1.jpg" alt="Auto">
+            </div>
+            <div class="item-info">
+                <h2 class="item-title">Title 1</h2>
+            </div>
+        </article>
+        <div class="line"></div>
+        
+        <article class="gallery-item">
+            <div class="image-wrapper" data-images="car2.jpg,car2_деталь1.jpg,car2_інтерєр.jpg">
+                <img src="car2.jpg" alt="Auto">
+            </div>
+            <div class="item-info">
+                <h2 class="item-title">Title 2</h2>
+            </div>
+        </article>
+        <div class="line"></div>
+        
+        <article class="gallery-item">
+            <div class="image-wrapper" data-images="car3.jpg,car3_деталь1.jpg,car3_інтерєр.jpg">
+                <img src="car3.jpg" alt="Auto">
+            </div>
+            <div class="item-info">
+                <h2 class="item-title">Title 3</h2>
+            </div>
+        </article>
+        <div class="line"></div>
+        
+        <article class="gallery-item">
+            <div class="image-wrapper" data-images="car4.jpg,car4_деталь1.jpg,car4_інтерєр.jpg">
+                <img src="car4.jpg" alt="Auto">
+            </div>
+            <div class="item-info">
+                <h2 class="item-title">Title 4</h2>
+            </div>
+        </article>
+        <div class="line"></div>
+        
+        <article class="gallery-item">
+            <div class="image-wrapper" data-images="car5.jpg,car5_деталь1.jpg,car5_інтерєр.jpg">
+                <img src="car5.jpg" alt="Auto">
+            </div>
+            <div class="item-info">
+                <h2 class="item-title">Title 5</h2>
+            </div>
+        </article>
+        <div class="line"></div>
+        
+        <article class="gallery-item">
+            <div class="image-wrapper" data-images="car6.jpg,car6_деталь1.jpg,car6_інтерєр.jpg">
+                <img src="car6.jpg" alt="Auto">
+            </div>
+            <div class="item-info">
+                <h2 class="item-title">Title 6</h2>
+            </div>
+        </article>
+    </main>
+
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <button class="lightbox-arrow lightbox-arrow-left" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+        <img src="" class="lightbox-image" id="lightboxImg">
+        <button class="lightbox-arrow lightbox-arrow-right" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+        <span class="lightbox-close">&times;</span>
+    </div>
+
+    <div class="line"></div>
+    <footer>
+        <div class="footer-left">
+            <div id="footer-text">© 2026 KOVALART STORE. ALL RIGHTS RESERVED.</div>
+            <a href="terms.html" data-i18n="terms">Terms & Conditions</a>
+        </div>
+        
+        <div class="payment-icons">
+            <i class="fa-brands fa-cc-visa" title="Visa"></i>
+            <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+            <i class="fa-brands fa-apple-pay" title="Apple Pay"></i>
+            <i class="fa-brands fa-google-pay" title="Google Pay"></i>
+            <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+            <i class="fa-solid fa-credit-card" title="Payoneer"></i>
+        </div>
+        
+        <div class="social-icons">
+            <a href="https://www.instagram.com/kkoval.art?igsh=MW9oZzA1NnUwMjNpNg==" target="_blank" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.etsy.com/shop/KovalArtStore" target="_blank" title="Etsy">
+                <i class="fa-solid fa-store"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            'ua': {
+                'home': 'Головна',
+                'about': 'Про автора',
+                'available': 'В наявності',
+                'gallery': 'Галерея',
+                'auto': 'Авто серія',
+                'yacht': 'Яхт серія',
+                'contact': 'Контакти',
+                'terms': 'Умови використання',
+                'footer': '© 2026 KOVALART STORE. УСІ ПРАВА ЗАХИЩЕНІ.'
+            },
+            'en': {
+                'home': 'Home',
+                'about': 'About',
+                'available': 'Available',
+                'gallery': 'Gallery',
+                'auto': 'Auto Series',
+                'yacht': 'Yacht Series',
+                'contact': 'Contact',
+                'terms': 'Terms & Conditions',
+                'footer': '© 2026 KOVALART STORE. ALL RIGHTS RESERVED.'
+            }
+        };
+
+        function setLanguage(lang) {
+            localStorage.setItem('selectedLanguage', lang);
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    const icon = el.querySelector('i');
+                    if (icon) {
+                        const iconHTML = icon.outerHTML;
+                        el.innerHTML = translations[lang][key] + " " + iconHTML;
+                    } else {
+                        el.textContent = translations[lang][key];
+                    }
+                }
+            });
+
+            const footerTextEl = document.getElementById('footer-text');
+            if (footerTextEl && translations[lang]['footer']) {
+                footerTextEl.textContent = translations[lang]['footer'];
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+            setLanguage(savedLang);
+
+            // Скрипт для розумного Lightbox з підтримкою гортання масивів
+            const overlay = document.getElementById('lightboxOverlay');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            let currentImagesArray = []; 
+            let currentImgIndex = 0;     
+
+            function updateLightboxImage() {
+                lightboxImg.src = currentImagesArray[currentImgIndex].trim();
+                
+                // Якщо картинка лише одна, ховаємо стрілочки навігації
+                if (currentImagesArray.length <= 1) {
+                    prevBtn.style.display = 'none';
+                    nextBtn.style.display = 'none';
+                } else {
+                    prevBtn.style.display = 'block';
+                    nextBtn.style.display = 'block';
+                }
+            }
+            
+            document.querySelectorAll('.image-wrapper').forEach(wrapper => {
+                wrapper.addEventListener('click', () => {
+                    const imagesData = wrapper.getAttribute('data-images');
+                    if (imagesData) {
+                        currentImagesArray = imagesData.split(',');
+                    } else {
+                        const singleImg = wrapper.querySelector('img').src;
+                        currentImagesArray = [singleImg];
+                    }
+                    
+                    currentImgIndex = 0; 
+                    overlay.classList.add('active'); 
+                    updateLightboxImage();
+                });
+            });
+
+            // Натискання на стрілку "Вліво"
+            prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); 
+                currentImgIndex--;
+                if (currentImgIndex < 0) {
+                    currentImgIndex = currentImagesArray.length - 1; 
+                }
+                updateLightboxImage();
+            });
+
+            // Натискання на стрілку "Вправо"
+            nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                currentImgIndex++;
+                if (currentImgIndex >= currentImagesArray.length) {
+                    currentImgIndex = 0; 
+                }
+                updateLightboxImage();
+            });
+
+            // Керування кнопками на клавіатурі
+            document.addEventListener('keydown', (e) => {
+                if (!overlay.classList.contains('active')) return;
+                
+                if (e.key === 'ArrowLeft' && currentImagesArray.length > 1) {
+                    prevBtn.click();
+                } else if (e.key === 'ArrowRight' && currentImagesArray.length > 1) {
+                    nextBtn.click();
+                } else if (e.key === 'Escape') {
+                    overlay.classList.remove('active');
+                }
+            });
+            
+            // Закриття при кліку на темне тло
+            overlay.addEventListener('click', (e) => { 
+                if (e.target !== lightboxImg && e.target !== prevBtn && e.target !== nextBtn && !prevBtn.contains(e.target) && !nextBtn.contains(e.target)) {
+                    overlay.classList.remove('active'); 
+                }
+            });
+        });
+    </script>
+</body>
+</html>
