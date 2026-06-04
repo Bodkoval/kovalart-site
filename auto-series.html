@@ -52,8 +52,56 @@
         .gallery-item { display: flex; gap: 40px; padding: 60px 0; align-items: flex-start; }
         .image-wrapper { width: 40%; flex-shrink: 0; cursor: zoom-in; }
         .image-wrapper img { width: 100%; height: auto; display: block; }
-        .item-info { width: 60%; }
+        .item-info { width: 60%; display: flex; flex-direction: column; gap: 15px; }
         .item-title { font-size: 24px; font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+        
+        /* Текст опису під замовлення */
+        .item-details { font-size: 14px; color: #555; text-transform: none; line-height: 1.5; }
+        
+        /* Стилі кнопок зв'язку */
+        .purchase-buttons { display: flex; gap: 15px; margin-top: 10px; }
+        .contact-dropdown { position: relative; display: inline-block; }
+        .btn-order { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px; 
+            padding: 12px 25px; 
+            border: 1px solid #000000; 
+            background-color: #ffffff; 
+            color: #000000; 
+            text-decoration: none; 
+            font-size: 12px; 
+            letter-spacing: 1px; 
+            text-transform: uppercase; 
+            transition: all 0.3s ease; 
+            cursor: pointer;
+            height: 43px;
+        }
+        .contact-dropdown:hover .btn-order { background-color: #000000; color: #ffffff; }
+        .contact-dropdown-content {
+            display: none;
+            position: absolute;
+            bottom: 100%; 
+            left: 0;
+            width: 100%;
+            padding-bottom: 10px; 
+            z-index: 5;
+        }
+        .contact-dropdown-inner { background-color: #ffffff; border: 1px solid #000000; }
+        .contact-dropdown:hover .contact-dropdown-content { display: block; }
+        .contact-dropdown-inner a {
+            color: #000000;
+            padding: 12px 15px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: background 0.2s ease;
+        }
+        .contact-dropdown-inner a:hover { background-color: #f5f5f5; }
 
         /* Оновлений Lightbox з кнопками гортання */
         .lightbox-overlay { 
@@ -144,9 +192,20 @@
             .item-info {
                 width: 100%;
                 text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
             .item-title {
                 font-size: 22px;
+            }
+            .purchase-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+            .contact-dropdown, .btn-order {
+                width: 100%;
+                justify-content: center;
             }
             footer { 
                 flex-direction: column; 
@@ -201,62 +260,140 @@
     <div class="line"></div>
     
     <main class="gallery-container">
+        <!-- GREEN PORSCHE -->
         <article class="gallery-item">
             <div class="image-wrapper" data-images="car1.jpg,car1_деталь1.jpg,car1_інтерєр.jpg">
                 <img src="car1.jpg" alt="Auto">
             </div>
             <div class="item-info">
                 <h2 class="item-title">Green Porsche</h2>
+                <p class="item-details" data-i18n="custom_order_text">Для замовлення цієї картини за вашими розмірами побажаннями звяжіться зі мною..</p>
+                <div class="purchase-buttons">
+                    <div class="contact-dropdown">
+                        <div class="btn-order" data-i18n="contact_me"><i class="fa-solid fa-envelope"></i> Contact Me</div>
+                        <div class="contact-dropdown-content">
+                            <div class="contact-dropdown-inner">
+                                <a href="https://www.instagram.com/kkoval.art?igsh=MW9oZzA1NnUwMjNpNg==" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                                <a href="https://wa.me/380958950778" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </article>
         <div class="line"></div>
         
+        <!-- PORSCHE GT3 RS -->
         <article class="gallery-item">
             <div class="image-wrapper" data-images="car2.jpg,car2_деталь1.jpg,car2_інтерєр.jpg">
                 <img src="car2.jpg" alt="Auto">
             </div>
             <div class="item-info">
                 <h2 class="item-title">Porsche GT3 RS</h2>
+                <p class="item-details" data-i18n="custom_order_text">Для замовлення цієї картини за вашими розмірами побажаннями звяжіться зі мною..</p>
+                <div class="purchase-buttons">
+                    <div class="contact-dropdown">
+                        <div class="btn-order" data-i18n="contact_me"><i class="fa-solid fa-envelope"></i> Contact Me</div>
+                        <div class="contact-dropdown-content">
+                            <div class="contact-dropdown-inner">
+                                <a href="https://www.instagram.com/kkoval.art?igsh=MW9oZzA1NnUwMjNpNg==" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                                <a href="https://wa.me/380958950778" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </article>
         <div class="line"></div>
         
+        <!-- 964 CARRERA RS -->
         <article class="gallery-item">
             <div class="image-wrapper" data-images="car3.jpg,car3_деталь1.jpg,car3_інтерєр.jpg">
                 <img src="car3.jpg" alt="Auto">
             </div>
             <div class="item-info">
                 <h2 class="item-title">964 Carrera RS</h2>
+                <p class="item-details" data-i18n="custom_order_text">Для замовлення цієї картини за вашими розмірами побажаннями звяжіться зі мною..</p>
+                <div class="purchase-buttons">
+                    <div class="contact-dropdown">
+                        <div class="btn-order" data-i18n="contact_me"><i class="fa-solid fa-envelope"></i> Contact Me</div>
+                        <div class="contact-dropdown-content">
+                            <div class="contact-dropdown-inner">
+                                <a href="https://www.instagram.com/kkoval.art?igsh=MW9oZzA1NnUwMjNpNg==" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                                <a href="https://wa.me/380958950778" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </article>
         <div class="line"></div>
         
+        <!-- 911 CLASSIC -->
         <article class="gallery-item">
             <div class="image-wrapper" data-images="car4.jpg,car4_деталь1.jpg,car4_інтерєр.jpg">
                 <img src="car4.jpg" alt="Auto">
             </div>
             <div class="item-info">
                 <h2 class="item-title">911 Classic</h2>
+                <p class="item-details" data-i18n="custom_order_text">Для замовлення цієї картини за вашими розмірами побажаннями звяжіться зі мною..</p>
+                <div class="purchase-buttons">
+                    <div class="contact-dropdown">
+                        <div class="btn-order" data-i18n="contact_me"><i class="fa-solid fa-envelope"></i> Contact Me</div>
+                        <div class="contact-dropdown-content">
+                            <div class="contact-dropdown-inner">
+                                <a href="https://www.instagram.com/kkoval.art?igsh=MW9oZzA1NnUwMjNpNg==" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                                <a href="https://wa.me/380958950778" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </article>
         <div class="line"></div>
         
+        <!-- 911 TURBO -->
         <article class="gallery-item">
             <div class="image-wrapper" data-images="car5.jpg,car5_деталь1.jpg,car5_інтерєр.jpg">
                 <img src="car5.jpg" alt="Auto">
             </div>
             <div class="item-info">
                 <h2 class="item-title">911 Turbo</h2>
+                <p class="item-details" data-i18n="custom_order_text">Для замовлення цієї картини за вашими розмірами побажаннями звяжіться зі мною..</p>
+                <div class="purchase-buttons">
+                    <div class="contact-dropdown">
+                        <div class="btn-order" data-i18n="contact_me"><i class="fa-solid fa-envelope"></i> Contact Me</div>
+                        <div class="contact-dropdown-content">
+                            <div class="contact-dropdown-inner">
+                                <a href="https://www.instagram.com/kkoval.art?igsh=MW9oZzA1NnUwMjNpNg==" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                                <a href="https://wa.me/380958950778" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </article>
         <div class="line"></div>
         
+        <!-- GT RS -->
         <article class="gallery-item">
             <div class="image-wrapper" data-images="car6.jpg,car6_деталь1.jpg,car6_інтерєр.jpg">
                 <img src="car6.jpg" alt="Auto">
             </div>
             <div class="item-info">
                 <h2 class="item-title">Gt RS</h2>
+                <p class="item-details" data-i18n="custom_order_text">Для замовлення цієї картини за вашими розмірами побажаннями звяжіться зі мною..</p>
+                <div class="purchase-buttons">
+                    <div class="contact-dropdown">
+                        <div class="btn-order" data-i18n="contact_me"><i class="fa-solid fa-envelope"></i> Contact Me</div>
+                        <div class="contact-dropdown-content">
+                            <div class="contact-dropdown-inner">
+                                <a href="https://www.instagram.com/kkoval.art?igsh=MW9oZzA1NnUwMjNpNg==" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                                <a href="https://wa.me/380958950778" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </article>
     </main>
@@ -305,7 +442,9 @@
                 'yacht': 'Яхт серія',
                 'contact': 'Контакти',
                 'terms': 'Умови використання',
-                'footer': '© 2026 KOVALART STORE. УСІ ПРАВА ЗАХИЩЕНІ.'
+                'footer': '© 2026 KOVALART STORE. УСІ ПРАВА ЗАХИЩЕНІ.',
+                'contact_me': 'Зв\'язатись зі мною',
+                'custom_order_text': 'Для замовлення цієї картини за вашими розмірами побажаннями звяжіться зі мною..'
             },
             'en': {
                 'home': 'Home',
@@ -316,7 +455,9 @@
                 'yacht': 'Yacht Series',
                 'contact': 'Contact',
                 'terms': 'Terms & Conditions',
-                'footer': '© 2026 KOVALART STORE. ALL RIGHTS RESERVED.'
+                'footer': '© 2026 KOVALART STORE. ALL RIGHTS RESERVED.',
+                'contact_me': 'Contact Me',
+                'custom_order_text': 'To order this painting according to your size and wishes, please contact me..'
             }
         };
 
