@@ -3,9 +3,9 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <meta name="description" content="Katia Koval - Contemporary Art. Professional paintings, yacht series, auto series. Available for purchase.">
+    <meta name="description" content="Katia Koval - Contemporary Art. Professional paintings, yacht series, auto series, other artworks. Available for purchase.">
     <link class="icon" href="favicon.ico" type="image/x-icon">
-    <title>Yacht Series | Katia Koval</title>
+    <title>Other Artworks | Katia Koval</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Mono:wght@300;400&display=swap');
@@ -54,7 +54,7 @@
         .image-wrapper img { width: 100%; height: auto; display: block; }
         .item-info { width: 60%; display: flex; flex-direction: column; gap: 15px; }
         .item-title { font-size: 24px; font-family: 'Cormorant Garamond', serif; font-weight: 400; }
-
+        
         /* Текст опису під замовлення */
         .item-details { font-size: 14px; color: #555; text-transform: none; line-height: 1.5; }
         
@@ -103,7 +103,7 @@
         }
         .contact-dropdown-inner a:hover { background-color: #f5f5f5; }
 
-        /* Оновлений інтерактивний Lightbox */
+        /* Lightbox з кнопками гортання */
         .lightbox-overlay { 
             display: none; 
             position: fixed; 
@@ -121,7 +121,7 @@
         .lightbox-close { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; cursor: pointer; transition: opacity 0.2s; }
         .lightbox-close:hover { opacity: 0.7; }
         
-        /* Стрілки для гортання додаткових ракурсів */
+        /* Стрілки навігації */
         .lightbox-arrow {
             position: absolute;
             top: 50%;
@@ -156,7 +156,7 @@
         .social-icons a { color: #000000; text-decoration: none; font-size: 22px; display: inline-block; transition: opacity 0.2s ease; }
         .social-icons a:hover { opacity: 0.6; }
 
-        /* Мобільна адаптивність (для екранів менше 768px) */
+        /* Мобільна адаптивність */
         @media (max-width: 768px) {
             body { padding: 0 20px; }
             header { display: flex; flex-direction: column; gap: 15px; padding: 20px 0; }
@@ -195,8 +195,8 @@
                 <div class="dropdown-content">
                     <div class="dropdown-inner">
                         <a href="auto-series.html" data-i18n="auto">Auto Series</a>
-                        <a href="yacht-series.html" data-i18n="yacht" style="font-weight: bold;">Yacht Series</a>
-                        <a href="others.html" data-i18n="others">Other Artworks</a>
+                        <a href="yacht-series.html" data-i18n="yacht">Yacht Series</a>
+                        <a href="others.html" data-i18n="others" style="font-weight: bold;">Other Artworks</a>
                     </div>
                 </div>
             </div>
@@ -210,11 +210,11 @@
     
     <main class="gallery-container">
         <article class="gallery-item">
-            <div class="image-wrapper" data-images="marinea.jpg,marinea1.jpg,marinea2.jpg,marinea3.jpg,marinea4.jpg,marinea5.jpg,marinea6.jpg">
-                <img src="marinea.jpg" alt="Marine">
+            <div class="image-wrapper" data-images="dog.jpg,dog1.jpg,dog2.jpg,dog3.jpg,dog4.jpg">
+                <img src="dog.jpg" alt="Other Artwork">
             </div>
             <div class="item-info">
-                <h2 class="item-title">Marine 1</h2>
+                <h2 class="item-title" data-i18n="item1_title">Домашні улюбленці</h2>
                 <p class="item-details" data-i18n="custom_order_text">Для замовлення цієї картини за вашими розмірами побажаннями звяжіться зі мною..</p>
                 <div class="purchase-buttons">
                     <div class="contact-dropdown">
@@ -232,11 +232,11 @@
         <div class="line"></div>
         
         <article class="gallery-item">
-            <div class="image-wrapper" data-images="marineb.jpg,marineb1.jpg,marineb2.jpg,marineb3.jpg,marineb4.jpg">
-                <img src="marineb.jpg" alt="Marine">
+            <div class="image-wrapper" data-images="cat.jpg,cat1.jpg,cat2.jpg,cat3.jpg,cat4.jpg">
+                <img src="cat.jpg" alt="Other Artwork">
             </div>
             <div class="item-info">
-                <h2 class="item-title">Marine 2</h2>
+                <h2 class="item-title" data-i18n="item2_title">Домашні улюбленці 2</h2>
                 <p class="item-details" data-i18n="custom_order_text">Для замовлення цієї картини за вашими розмірами побажаннями звяжіться зі мною..</p>
                 <div class="purchase-buttons">
                     <div class="contact-dropdown">
@@ -252,13 +252,13 @@
             </div>
         </article>
         <div class="line"></div>
-        
+
         <article class="gallery-item">
-            <div class="image-wrapper" data-images="marinec.jpg,marinec1.jpg,marinec2.jpg,marinec3.jpg,marinec4.jpg">
-                <img src="marinec.jpg" alt="Marine">
+            <div class="image-wrapper" data-images="Family.jpg,Family1.jpg,Family2.jpg,Family3.jpg,Family4.jpg,Family5.jpg">
+                <img src="Family.jpg" alt="Other Artwork">
             </div>
             <div class="item-info">
-                <h2 class="item-title">Marine 3</h2>
+                <h2 class="item-title" data-i18n="item3_title">Моменти життя</h2>
                 <p class="item-details" data-i18n="custom_order_text">Для замовлення цієї картини за вашими розмірами побажаннями звяжіться зі мною..</p>
                 <div class="purchase-buttons">
                     <div class="contact-dropdown">
@@ -274,13 +274,13 @@
             </div>
         </article>
         <div class="line"></div>
-        
+
         <article class="gallery-item">
-            <div class="image-wrapper" data-images="marinee.jpg,marinee1.jpg,marinee2.jpg,marinee3.jpg,marinee4.jpg">
-                <img src="marinee.jpg" alt="Marine">
+            <div class="image-wrapper" data-images="tenis.jpg,tenis1.jpg,tenis2.jpg,tenis3.jpg,tenis4.jpg,tenis5.jpg">
+                <img src="tenis.jpg" alt="Other Artwork">
             </div>
             <div class="item-info">
-                <h2 class="item-title">Marine 4</h2>
+                <h2 class="item-title" data-i18n="item4_title">Теніс</h2>
                 <p class="item-details" data-i18n="custom_order_text">Для замовлення цієї картини за вашими розмірами побажаннями звяжіться зі мною..</p>
                 <div class="purchase-buttons">
                     <div class="contact-dropdown">
@@ -296,35 +296,13 @@
             </div>
         </article>
         <div class="line"></div>
-        
+
         <article class="gallery-item">
-            <div class="image-wrapper" data-images="marinet.jpg,marinet1.jpg,marinet2.jpg,marinet3.jpg">
-                <img src="marinet.jpg" alt="Marine">
+            <div class="image-wrapper" data-images="sport.jpg,sport1.jpg,sport2.jpg,sport3.jpg,sport4.jpg,sport5.jpg">
+                <img src="sport.jpg" alt="Other Artwork">
             </div>
             <div class="item-info">
-                <h2 class="item-title">Marine 5</h2>
-                <p class="item-details" data-i18n="custom_order_text">Для замовлення цієї картини за вашими розмірами побажаннями звяжіться зі мною..</p>
-                <div class="purchase-buttons">
-                    <div class="contact-dropdown">
-                        <div class="btn-order" data-i18n="contact_me"><i class="fa-solid fa-envelope"></i> Contact Me</div>
-                        <div class="contact-dropdown-content">
-                            <div class="contact-dropdown-inner">
-                                <a href="https://www.instagram.com/kkoval.art?igsh=MW9oZzA1NnUwMjNpNg==" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                                <a href="https://wa.me/380958950778" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </article>
-        <div class="line"></div>
-        
-        <article class="gallery-item">
-            <div class="image-wrapper" data-images="marinef.jpg,marinef1.jpg,marinef2.jpg,marinef3.jpg,marinef4.jpg,marinef5.jpg">
-                <img src="marinef.jpg" alt="Marine">
-            </div>
-            <div class="item-info">
-                <h2 class="item-title">Marine 6</h2>
+                <h2 class="item-title" data-i18n="item5_title">Залізна людина</h2>
                 <p class="item-details" data-i18n="custom_order_text">Для замовлення цієї картини за вашими розмірами побажаннями звяжіться зі мною..</p>
                 <div class="purchase-buttons">
                     <div class="contact-dropdown">
@@ -388,7 +366,12 @@
                 'terms': 'Умови використання',
                 'footer': '© 2026 KOVALART STORE. УСІ ПРАВА ЗАХИЩЕНІ.',
                 'contact_me': 'Зв\'язатись зі мною',
-                'custom_order_text': 'Для замовлення цієї картини за вашими розмірами побажаннями звяжіться зі мною..'
+                'custom_order_text': 'Для замовлення цієї картини за вашими розмірами побажаннями звяжіться зі мною..',
+                'item1_title': 'Домашні улюбленці',
+                'item2_title': 'Домашні улюбленці 2',
+                'item3_title': 'Моменти життя',
+                'item4_title': 'Теніс',
+                'item5_title': 'Залізна людина'
             },
             'en': {
                 'home': 'Home',
@@ -402,7 +385,12 @@
                 'terms': 'Terms & Conditions',
                 'footer': '© 2026 KOVALART STORE. ALL RIGHTS RESERVED.',
                 'contact_me': 'Contact Me',
-                'custom_order_text': 'To order this painting according to your size and wishes, please contact me..'
+                'custom_order_text': 'To order this painting according to your size and wishes, please contact me..',
+                'item1_title': 'Custom Pet Portrait',
+                'item2_title': 'Whiskers & Grace',
+                'item3_title': 'Cherished Moments',
+                'item4_title': 'Tennis',
+                'item5_title': 'Iron Man'
             }
         };
 

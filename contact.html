@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="description" content="Katia Koval - Contemporary Art. Professional paintings, yacht series, auto series. Available for purchase.">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link class="icon" href="favicon.ico" type="image/x-icon">
     <title>Contact | Katia Koval</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -97,6 +97,7 @@
                     <div class="dropdown-inner">
                         <a href="auto-series.html" data-i18n="auto">Auto Series</a>
                         <a href="yacht-series.html" data-i18n="yacht">Yacht Series</a>
+                        <a href="others.html" data-i18n="others">Other Artworks</a>
                     </div>
                 </div>
             </div>
@@ -166,6 +167,7 @@
                 'gallery': 'Галерея',
                 'auto': 'Авто серія',
                 'yacht': 'Яхт серія',
+                'others': 'Інші роботи',
                 'title': 'Зворотній зв\'язок',
                 'name': 'Ім\'я',
                 'email': 'Електронна пошта',
@@ -180,6 +182,7 @@
                 'gallery': 'Gallery',
                 'auto': 'Auto Series',
                 'yacht': 'Yacht Series',
+                'others': 'Other Artworks',
                 'title': 'Contact the Artist',
                 'name': 'Name',
                 'email': 'Email Address',
@@ -192,5 +195,53 @@
         function setLanguage(lang) {
             localStorage.setItem('selectedLanguage', lang);
             
-            // Переклад головного меню
+            // Переклад головного меню та елементів з data-i18n
             document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    const icon = el.querySelector('i');
+                    if (icon) {
+                        const iconHTML = icon.outerHTML;
+                        el.innerHTML = translations[lang][key] + " " + iconHTML;
+                    } else {
+                        el.textContent = translations[lang][key];
+                    }
+                }
+            });
+
+            // Переклад елементів форми за ID
+            const formTitle = document.getElementById('form-title');
+            if (formTitle) formTitle.textContent = translations[lang]['title'];
+
+            const labelName = document.getElementById('label-name');
+            if (labelName) labelName.textContent = translations[lang]['name'];
+
+            const labelEmail = document.getElementById('label-email');
+            if (labelEmail) labelEmail.textContent = translations[lang]['email'];
+
+            const labelMsg = document.getElementById('label-msg');
+            if (labelMsg) labelMsg.textContent = translations[lang]['msg'];
+
+            const btnText = document.getElementById('btn-text');
+            if (btnText) {
+                if (btnText.tagName === 'BUTTON') {
+                    btnText.textContent = translations[lang]['btn'];
+                } else {
+                    btnText.value = translations[lang]['btn'];
+                }
+            }
+
+            // Переклад підвалу
+            const footerTextEl = document.getElementById('footer-text');
+            if (footerTextEl && translations[lang]['footer']) {
+                footerTextEl.textContent = translations[lang]['footer'];
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+            setLanguage(savedLang);
+        });
+    </script>
+</body>
+</html>
