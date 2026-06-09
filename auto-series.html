@@ -103,7 +103,7 @@
         }
         .contact-dropdown-inner a:hover { background-color: #f5f5f5; }
 
-        /* Оновлений Lightbox з кнопками гортання */
+        /* Lightbox з кнопками гортання */
         .lightbox-overlay { 
             display: none; 
             position: fixed; 
@@ -158,74 +158,22 @@
 
         /* Мобільна адаптивність (для екранів менше 768px) */
         @media (max-width: 768px) {
-            body { 
-                padding: 0 20px; 
-            }
-            header { 
-                display: flex; 
-                flex-direction: column; 
-                gap: 15px; 
-                padding: 20px 0; 
-            }
-            header nav { 
-                flex-wrap: wrap; 
-                justify-content: center; 
-            }
-            header nav a { 
-                margin: 5px 10px; 
-            }
-            .header-empty { 
-                justify-self: center; 
-            }
-            .gallery-container {
-                padding: 30px 0;
-            }
-            .gallery-item {
-                flex-direction: column;
-                gap: 20px;
-                padding: 40px 0;
-                align-items: center;
-            }
-            .image-wrapper {
-                width: 100%;
-            }
-            .item-info {
-                width: 100%;
-                text-align: center;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            .item-title {
-                font-size: 22px;
-            }
-            .purchase-buttons {
-                width: 100%;
-                justify-content: center;
-            }
-            .contact-dropdown, .btn-order {
-                width: 100%;
-                justify-content: center;
-            }
-            footer { 
-                flex-direction: column; 
-                gap: 25px; 
-                text-align: center; 
-                padding: 40px 0; 
-            }
-            .footer-left {
-                align-items: center;
-            }
-            .payment-icons { 
-                position: static; 
-                transform: none; 
-                justify-content: center; 
-                flex-wrap: wrap; 
-            }
-            .social-icons { 
-                justify-content: center; 
-            }
-            /* Адаптація стрілок під пальці на мобілках */
+            body { padding: 0 20px; }
+            header { display: flex; flex-direction: column; gap: 15px; padding: 20px 0; }
+            header nav { flex-wrap: wrap; justify-content: center; }
+            header nav a { margin: 5px 10px; }
+            .header-empty { justify-self: center; }
+            .gallery-container { padding: 30px 0; }
+            .gallery-item { flex-direction: column; gap: 20px; padding: 40px 0; align-items: center; }
+            .image-wrapper { width: 100%; }
+            .item-info { width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; }
+            .item-title { font-size: 22px; }
+            .purchase-buttons { width: 100%; justify-content: center; }
+            .contact-dropdown, .btn-order { width: 100%; justify-content: center; }
+            footer { flex-direction: column; gap: 25px; text-align: center; padding: 40px 0; }
+            .footer-left { align-items: center; }
+            .payment-icons { position: static; transform: none; justify-content: center; flex-wrap: wrap; }
+            .social-icons { justify-content: center; }
             .lightbox-arrow { font-size: 35px; padding: 10px; }
             .lightbox-arrow-left { left: 5px; }
             .lightbox-arrow-right { right: 5px; }
@@ -283,8 +231,8 @@
         <div class="line"></div>
         
         <article class="gallery-item">
-            <div class="image-wrapper" data-images="car2.jpg,car2_деталь1.jpg,car2_інтерєр.jpg">
-                <img src="car2.jpg" alt="Auto">
+            <div class="image-wrapper" data-images="red.jpg,red1.jpg,red2.jpg,red3.jpg,red4.jpg">
+                <img src="red.jpg" alt="Auto">
             </div>
             <div class="item-info">
                 <h2 class="item-title">Porsche GT3 RS</h2>
@@ -371,11 +319,77 @@
         <div class="line"></div>
         
         <article class="gallery-item">
-            <div class="image-wrapper" data-images="car6.jpg,car6_деталь1.jpg,car6_інтерєр.jpg">
-                <img src="car6.jpg" alt="Auto">
+            <div class="image-wrapper" data-images="rs.jpg,rs1.jpg,rs2.jpg,rs3.jpg,rs4.jpg,rs5.jpg">
+                <img src="rs.jpg" alt="Auto">
             </div>
             <div class="item-info">
                 <h2 class="item-title">Gt RS</h2>
+                <p class="item-details" data-i18n="custom_order_text">Для замовлення цієї картини за вашими розмірами побажаннями звяжіться зі мною..</p>
+                <div class="purchase-buttons">
+                    <div class="contact-dropdown">
+                        <div class="btn-order" data-i18n="contact_me"><i class="fa-solid fa-envelope"></i> Contact Me</div>
+                        <div class="contact-dropdown-content">
+                            <div class="contact-dropdown-inner">
+                                <a href="https://www.instagram.com/kkoval.art?igsh=MW9oZzA1NnUwMjNpNg==" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                                <a href="https://wa.me/380958950778" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <div class="line"></div>
+
+        <article class="gallery-item">
+            <div class="image-wrapper" data-images="mr.jpg,mr1.jpg,mr2.jpg,mr3.jpg,mr4.jpg,mr5.jpg,mr6.jpg,mr7.jpg,mr8.jpg">
+                <img src="mr.jpg" alt="Auto">
+            </div>
+            <div class="item-info">
+                <h2 class="item-title">Gt2RS MR</h2>
+                <p class="item-details" data-i18n="custom_order_text">Для замовлення цієї картини за вашими розмірами побажаннями звяжіться зі мною..</p>
+                <div class="purchase-buttons">
+                    <div class="contact-dropdown">
+                        <div class="btn-order" data-i18n="contact_me"><i class="fa-solid fa-envelope"></i> Contact Me</div>
+                        <div class="contact-dropdown-content">
+                            <div class="contact-dropdown-inner">
+                                <a href="https://www.instagram.com/kkoval.art?igsh=MW9oZzA1NnUwMjNpNg==" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                                <a href="https://wa.me/380958950778" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <div class="line"></div>
+
+        <article class="gallery-item">
+            <div class="image-wrapper" data-images="targa.jpg,targa1.jpg,targa2.jpg,targa3.jpg,targa4.jpg,targa5.jpg,targa6.jpg">
+                <img src="targa.jpg" alt="Auto">
+            </div>
+            <div class="item-info">
+                <h2 class="item-title">Targa RS</h2>
+                <p class="item-details" data-i18n="custom_order_text">Для замовлення цієї картини за вашими розмірами побажаннями звяжіться зі мною..</p>
+                <div class="purchase-buttons">
+                    <div class="contact-dropdown">
+                        <div class="btn-order" data-i18n="contact_me"><i class="fa-solid fa-envelope"></i> Contact Me</div>
+                        <div class="contact-dropdown-content">
+                            <div class="contact-dropdown-inner">
+                                <a href="https://www.instagram.com/kkoval.art?igsh=MW9oZzA1NnUwMjNpNg==" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                                <a href="https://wa.me/380958950778" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <div class="line"></div>
+
+        <article class="gallery-item">
+            <div class="image-wrapper" data-images="audi.jpg,audi1.jpg,audi2.jpg,audi3.jpg,audi4.jpg,audi5.jpg">
+                <img src="audi.jpg" alt="Auto">
+            </div>
+            <div class="item-info">
+                <h2 class="item-title">Audi RS5</h2>
                 <p class="item-details" data-i18n="custom_order_text">Для замовлення цієї картини за вашими розмірами побажаннями звяжіться зі мною..</p>
                 <div class="purchase-buttons">
                     <div class="contact-dropdown">
@@ -481,7 +495,6 @@
             const savedLang = localStorage.getItem('selectedLanguage') || 'en';
             setLanguage(savedLang);
 
-            // Скрипт для розумного Lightbox з підтримкою гортання масивів
             const overlay = document.getElementById('lightboxOverlay');
             const lightboxImg = document.getElementById('lightboxImg');
             const prevBtn = document.getElementById('prevBtn');
@@ -493,7 +506,6 @@
             function updateLightboxImage() {
                 lightboxImg.src = currentImagesArray[currentImgIndex].trim();
                 
-                // Якщо картинка лише одна, ховаємо стрілочки навігації
                 if (currentImagesArray.length <= 1) {
                     prevBtn.style.display = 'none';
                     nextBtn.style.display = 'none';
@@ -519,7 +531,6 @@
                 });
             });
 
-            // Натискання на стрілку "Вліво"
             prevBtn.addEventListener('click', (e) => {
                 e.stopPropagation(); 
                 currentImgIndex--;
@@ -529,7 +540,6 @@
                 updateLightboxImage();
             });
 
-            // Натискання на стрілку "Вправо"
             nextBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 currentImgIndex++;
@@ -539,7 +549,6 @@
                 updateLightboxImage();
             });
 
-            // Керування кнопками на клавіатурі
             document.addEventListener('keydown', (e) => {
                 if (!overlay.classList.contains('active')) return;
                 
@@ -552,7 +561,6 @@
                 }
             });
             
-            // Закриття при кліку на темне тло
             overlay.addEventListener('click', (e) => { 
                 if (e.target !== lightboxImg && e.target !== prevBtn && e.target !== nextBtn && !prevBtn.contains(e.target) && !nextBtn.contains(e.target)) {
                     overlay.classList.remove('active'); 
