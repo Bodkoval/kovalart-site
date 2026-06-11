@@ -60,6 +60,12 @@
         .submit-btn { background: #000; color: #fff; border: 1px solid #000; padding: 15px; font-family: 'DM Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: background 0.2s, color 0.2s; margin-top: 10px; }
         .submit-btn:hover { background: #fff; color: #000; }
 
+        /* Блок з прямими контактами компанії для LiqPay */
+        .direct-contacts { margin-top: 50px; padding-top: 30px; border-top: 1px dashed #000; text-align: center; font-size: 14px; letter-spacing: 1px; line-height: 1.8; }
+        .direct-contacts p strong { text-transform: uppercase; font-size: 12px; }
+        .direct-contacts a { color: #000; text-decoration: none; border-bottom: 1px solid #000; }
+        .direct-contacts a:hover { opacity: 0.6; }
+
         /* Підвал */
         footer { padding: 60px 0; display: flex; justify-content: space-between; align-items: center; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; position: relative; }
         .payment-icons { display: flex; gap: 20px; align-items: center; color: #000000; font-size: 22px; position: absolute; left: 50%; transform: translateX(-50%); }
@@ -133,6 +139,11 @@
 
             <button type="submit" class="submit-btn" id="btn-text">Send Message</button>
         </form>
+
+        <div class="direct-contacts">
+            <p><span id="contact-phone-label"><strong>Phone:</strong></span> <a href="tel:+380958950778">0958950778</a></p>
+            <p><span id="contact-email-label"><strong>Email:</strong></span> <a href="mailto:applekovall5@gmail.com">applekovall5@gmail.com</a></p>
+        </div>
     </main>
 
     <div class="line"></div>
@@ -173,6 +184,8 @@
                 'email': 'Електронна пошта',
                 'msg': 'Повідомлення',
                 'btn': 'Надіслати',
+                'phone_lbl': 'Телефон:',
+                'email_lbl': 'Електронна пошта:',
                 'footer': '© 2026 KOVALART STORE. УСІ ПРАВА ЗАХИЩЕНІ.'
             },
             'en': {
@@ -188,6 +201,8 @@
                 'email': 'Email Address',
                 'msg': 'Message',
                 'btn': 'Send Message',
+                'phone_lbl': 'Phone:',
+                'email_lbl': 'Email:',
                 'footer': '© 2026 KOVALART STORE. ALL RIGHTS RESERVED.'
             }
         };
@@ -230,6 +245,13 @@
                     btnText.value = translations[lang]['btn'];
                 }
             }
+
+            // Переклад міток прямих контактів
+            const phoneLbl = document.getElementById('contact-phone-label');
+            if (phoneLbl) phoneLbl.innerHTML = `<strong>${translations[lang]['phone_lbl']}</strong>`;
+
+            const emailLbl = document.getElementById('contact-email-label');
+            if (emailLbl) emailLbl.innerHTML = `<strong>${translations[lang]['email_lbl']}</strong>`;
 
             // Переклад підвалу
             const footerTextEl = document.getElementById('footer-text');
