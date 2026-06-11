@@ -52,8 +52,8 @@
         .terms-title { font-size: 32px; font-family: 'Cormorant Garamond', serif; font-weight: 400; margin-bottom: 40px; text-align: center; text-transform: uppercase; letter-spacing: 1px; }
         
         .terms-section { margin-bottom: 35px; }
-        .terms-section h3 { font-size: 16px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; font-weight: 400; }
-        .terms-section p, .terms-section ul { font-size: 14px; line-height: 1.6; color: #333; list-style-position: inside; }
+        .terms-section h3 { font-size: 16px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; font-weight: 400; border-bottom: 1px solid #000; padding-bottom: 5px; }
+        .terms-section p, .terms-section ul { font-size: 14px; line-height: 1.6; color: #333; list-style-position: inside; text-align: justify; }
         .terms-section ul li { margin-bottom: 8px; }
 
         /* Підвал з відносним позиціонуванням */
@@ -72,7 +72,7 @@
         .social-icons a { color: #000000; text-decoration: none; font-size: 22px; display: inline-block; transition: opacity 0.2s ease; }
         .social-icons a:hover { opacity: 0.6; }
 
-        /* Мобільна адаптивність (для екранів менше 768px) */
+        /* Мобільна адаптивність */
         @media (max-width: 768px) {
             body { padding: 0 20px; }
             header { display: flex; flex-direction: column; gap: 15px; padding: 20px 0; }
@@ -106,6 +106,7 @@
                     <div class="dropdown-inner">
                         <a href="auto-series.html" data-i18n="auto">Auto Series</a>
                         <a href="yacht-series.html" data-i18n="yacht">Yacht Series</a>
+                        <a href="others.html" data-i18n="others">Other Artworks</a>
                     </div>
                 </div>
             </div>
@@ -121,7 +122,7 @@
         <h1 class="terms-title" data-i18n="terms_title">Terms & Conditions</h1>
         
         <div id="terms-content">
-            </div>
+        </div>
     </main>
 
     <div class="line"></div>
@@ -159,6 +160,7 @@
                 'gallery': 'Галерея',
                 'auto': 'Авто серія',
                 'yacht': 'Яхт серія',
+                'others': 'Інші роботи',
                 'contact': 'Контакти',
                 'terms': 'Умови використання',
                 'terms_title': 'Правила та умови',
@@ -166,30 +168,38 @@
                 'html_content': `
                     <div class="terms-section">
                         <h3>1. Загальні положення</h3>
-                        <p>Ласкаво просимо до KovalArt Store. Купуючи оригінальні картини чи замовляючи індивідуальні роботи на цьому веб-сайті, ви погоджуєтеся з наведеними нижче правилами.</p>
+                        <p>Цей договір є офіційною та публічною пропозицією (офертою) ФОП Коваль Наталія Дмитрівна (надалі — Продавець) для будь-якої фізичної або юридичної особи (надалі — Покупець) укласти договір купівлі-продажу товарів дистанційним способом через інтернет-магазин на сайті kovalart.com.</p>
                     </div>
                     <div class="terms-section">
-                        <h3>2. Оплата</h3>
-                        <p>Всі платежі обробляються безпечно. Робота над замовленням або відправка готового виробу починається лише після 100% підтвердження оплати.</p>
+                        <h3>2. Вартість товарів та умови оплати</h3>
+                        <p>Всі ціни на товари вказані на сайті в іноземній валюті (USD) для ознайомлення, проте фінальний розрахунок, списання та оплата на території України здійснюються виключно в національній валюті — гривні (UAH) за діючим обмінним курсом банківської системи на момент оплати. Робота над замовленням або відправка виробу починається після 100% підтвердження оплати.</p>
                     </div>
                     <div class="terms-section">
                         <h3>3. Доставка та терміни</h3>
                         <ul>
-                            <li><strong>Картини в наявності:</strong> Всі товари, які є в наявності, обробляються та відправляються протягом 7 робочих днів після підтвердження оплати.</li>
-                            <li><strong>Картини під замовлення (Made to Order):</strong> Терміни створення та відправки індивідуальних замовлень залежать від розміру та складності роботи і обговорюються з художником в індивідуальному порядку.</li>
-                            <li><strong>Методи доставки:</strong> Міжнародна доставка здійснюється авіапоштою з трек-номером (через національного поштового оператора). Після прибуття у вашу країну посилка доставляється вашою місцевою державною поштовою службою. Покупець несе відповідальність за будь-які митні збори у своїй країні.</li>
+                            <li><strong>Картини в наявності:</strong> Всі товари обробляються та відправляються протягом 7 робочих днів після підтвердження оплати. По Україні доставка здійснюється компанією "Нова Пошта".</li>
+                            <li><strong>Картини під замовлення (Made to Order):</strong> Терміни створення та відправки індивідуальних замовлень залежать від складності роботи і обговорюються окремо.</li>
+                            <li><strong>Міжнародна доставка:</strong> Здійснюється авіапоштою з трек-номером. Покупець несе відповідальність за будь-які митні збори у своїй країні.</li>
                         </ul>
                     </div>
                     <div class="terms-section">
                         <h3>4. Повернення та обмін</h3>
                         <ul>
-                            <li><strong>Оригінали та індивідуальні замовлення:</strong> Через унікальну природу оригінальних картин та робіт під замовлення, всі продажі є остаточними. Повернення коштів чи обмін у випадку, якщо покупець передумав, не передбачено.</li>
-                            <li><strong>Пошкодження при транспортуванні:</strong> Якщо картина була пошкоджена під час доставки, будь ласка, зв'яжіться з нами протягом 48 годин з моменту отримання, додавши фотографії пошкоджень та упаковки для вирішення ситуації.</li>
+                            <li><strong>Оригінальні художні твори:</strong> Відповідно до Закону України «Про захист прав споживачів», покупець має право повернути або обміняти товар належної якості протягом 14 днів з моменту його отримання, за умови повного збереження його товарного вигляду та споживчих властивостей.</li>
+                            <li><strong>Пошкодження при транспортуванні:</strong> Якщо картина пошкоджена під час доставки, зв'яжіться з нами протягом 48 років з моменту отримання, додавши фотографії пошкоджень.</li>
                         </ul>
                     </div>
                     <div class="terms-section">
                         <h3>5. Авторське право</h3>
-                        <p>Художник зберігає всі права на копіювання та тиражування всіх створених художніх робіт. Купівля картини не передає покупцеві жодних авторських прав на комерційне використання чи репродукцію.</p>
+                        <p>Художник зберігає всі права на копіювання та тиражування створених художніх робіт. Купівля картини не передає покупцеві комерційних авторських прав чи прав на репродукцію.</p>
+                    </div>
+                    <div class="terms-section">
+                        <h3>6. Юридичні реквізити компанії</h3>
+                        <p><strong>Фізична особа-підприємець Коваль Наталія Дмитрівна</strong><br>
+                        РНОКПП (ІПН): 2732313829<br>
+                        Юридична адреса: Україна, Чернівецька обл., м. Чернівці, вул. 2-й пр. Мукачівський, 9<br>
+                        Електронна пошта: applekovall5@gmail.com<br>
+                        Телефон: 0958950778</p>
                     </div>
                 `
             },
@@ -200,6 +210,7 @@
                 'gallery': 'Gallery',
                 'auto': 'Auto Series',
                 'yacht': 'Yacht Series',
+                'others': 'Other Artworks',
                 'contact': 'Contact',
                 'terms': 'Terms & Conditions',
                 'terms_title': 'Terms & Conditions',
@@ -207,30 +218,38 @@
                 'html_content': `
                     <div class="terms-section">
                         <h3>1. General Overview</h3>
-                        <p>Welcome to KovalArt Store. By purchasing original paintings or commissioning custom artworks on this website, you agree to comply with and be bound by the following terms and conditions.</p>
+                        <p>This contract is an official and public offer (terms of sale) of FOP Koval Nataliia Dmytrivna (hereinafter — the Seller) for any individual or legal entity (hereinafter — the Buyer) to conclude a contract of sale of goods remotely via the online store at kovalart.com.</p>
                     </div>
                     <div class="terms-section">
-                        <h3>2. Payment</h3>
-                        <p>All payments are processed securely. Artworks will only be prepared for shipping or customized after 100% payment confirmation.</p>
+                        <h3>2. Product Value and Payment Terms</h3>
+                        <p>All prices on the website are displayed in foreign currency (USD) for information purposes, but final processing, currency conversion, and payments within Ukraine are conducted exclusively in the national currency — Ukrainian Hryvnia (UAH) at the effective exchange rate of the banking system at the time of payment. Artworks will be prepared or shipped after 100% payment confirmation.</p>
                     </div>
                     <div class="terms-section">
                         <h3>3. Shipping & Delivery</h3>
                         <ul>
-                            <li><strong>Available Artworks:</strong> All items currently in stock are processed and shipped within 7 business days after payment confirmation.</li>
-                            <li><strong>Custom Orders (Made to Order):</strong> The creation and shipping timeline for custom or personalized artworks depends on the size and complexity of the piece and will be discussed individually with the artist.</li>
-                            <li><strong>Delivery Methods:</strong> We ship internationally via International Tracked Airmail (National Postal Operator). Once the package reaches your country, it will be delivered by your local state postal service. Buyers are responsible for any customs and import taxes that may apply.</li>
+                            <li><strong>Available Artworks:</strong> Items currently in stock are processed and shipped within 7 business days after payment confirmation. Shipping within Ukraine is handled by "Nova Poshta".</li>
+                            <li><strong>Custom Orders (Made to Order):</strong> The timeline for custom artworks depends on size and complexity and is discussed individually.</li>
+                            <li><strong>International Delivery:</strong> Shipped via Tracked Airmail. Buyers are responsible for any customs duties or import taxes that may apply in their country.</li>
                         </ul>
                     </div>
                     <div class="terms-section">
                         <h3>4. Returns & Refunds</h3>
                         <ul>
-                            <li><strong>Original Art & Custom Orders:</strong> Due to the unique nature of original artwork and custom commissions, all sales are final. We do not accept returns, refunds, or exchanges if you simply change your mind.</li>
-                            <li><strong>Damaged Items:</strong> In the unlikely event that your artwork arrives damaged during transit, please contact us within 48 hours of delivery with photos of the damage and packaging so we can resolve the issue.</li>
+                            <li><strong>Original Artworks:</strong> In accordance with the Law of Ukraine "On Protection of Consumer Rights", the Buyer has the right to return or exchange goods of proper quality within 14 days of receipt, provided that their commercial appearance and qualities are fully preserved.</li>
+                            <li><strong>Transit Damage:</strong> If the artwork arrives damaged, please contact us within 48 hours of delivery with photos of the damage and packaging.</li>
                         </ul>
                     </div>
                     <div class="terms-section">
                         <h3>5. Copyright & Intellectual Property</h3>
-                        <p>The artist retains all reproduction and copyrights to the artworks created. The purchase of a painting does not transfer any copyright or commercial reproduction rights to the buyer.</p>
+                        <p>The artist retains all reproduction and copyrights to the artworks created. The purchase of a painting does not transfer any commercial copyrights or reproduction rights to the buyer.</p>
+                    </div>
+                    <div class="terms-section">
+                        <h3>6. Legal & Contact Details</h3>
+                        <p><strong>FOP Koval Nataliia Dmytrivna</strong><br>
+                        Tax ID (RNOKPP): 2732313829<br>
+                        Registered Address: 9, 2nd Mukachivskyi proizd, Chernivtsi, Chernivtsi Oblast, Ukraine<br>
+                        Email: applekovall5@gmail.com<br>
+                        Phone: 0958950778</p>
                     </div>
                 `
             }
